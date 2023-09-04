@@ -79,7 +79,7 @@ $APPLICATION->SetTitle("Мои объявления");
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
-		"SEF_FOLDER" => "/advertisment/",
+		"SEF_FOLDER" => "/seller_account/my_advertisments/",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
