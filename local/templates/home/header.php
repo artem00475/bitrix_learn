@@ -45,7 +45,6 @@
 				<div class="row align-items-center">
 					<div class="col-6 col-md-6">
 						<p class="mb-0">
-							<a href="#" class="mr-3">
 								<? $APPLICATION->IncludeComponent(
 									"bitrix:main.include",
 									"",
@@ -55,8 +54,6 @@
 										"EDIT_TEMPLATE" => ""
 									)
 								); ?>
-							</a>
-							<a href="#">
 								<? $APPLICATION->IncludeComponent(
 									"bitrix:main.include",
 									"",
@@ -66,7 +63,6 @@
 										"EDIT_TEMPLATE" => ""
 									)
 								); ?>
-							</a>
 						</p>
 					</div>
 					<div class="col-6 col-md-6 text-right">
