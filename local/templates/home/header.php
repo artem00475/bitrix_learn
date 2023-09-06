@@ -1,7 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <!DOCTYPE html>
-<html lang="<?=LANGUAGE_ID?>">
+<html lang="<?= LANGUAGE_ID ?>">
 
 <head>
 	<title><? $APPLICATION->ShowTitle() ?></title>
@@ -45,24 +45,24 @@
 				<div class="row align-items-center">
 					<div class="col-6 col-md-6">
 						<p class="mb-0">
-								<? $APPLICATION->IncludeComponent(
-									"bitrix:main.include",
-									"",
-									array(
-										"AREA_FILE_SHOW" => "page",
-										"AREA_FILE_SUFFIX" => "phone",
-										"EDIT_TEMPLATE" => ""
-									)
-								); ?>
-								<? $APPLICATION->IncludeComponent(
-									"bitrix:main.include",
-									"",
-									array(
-										"AREA_FILE_SHOW" => "page",
-										"AREA_FILE_SUFFIX" => "email",
-										"EDIT_TEMPLATE" => ""
-									)
-								); ?>
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								array(
+									"AREA_FILE_SHOW" => "page",
+									"AREA_FILE_SUFFIX" => "phone",
+									"EDIT_TEMPLATE" => ""
+								)
+							); ?>
+							<? $APPLICATION->IncludeComponent(
+								"bitrix:main.include",
+								"",
+								array(
+									"AREA_FILE_SHOW" => "page",
+									"AREA_FILE_SUFFIX" => "email",
+									"EDIT_TEMPLATE" => ""
+								)
+							); ?>
 						</p>
 					</div>
 					<div class="col-6 col-md-6 text-right">
@@ -97,70 +97,37 @@
 									); ?>
 								</strong></a></h1>
 					</div>
-					<div class="col-4 col-md-4 col-lg-8">
-						<nav class="site-navigation text-right text-md-right" role="navigation">
 
-							<div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a>
-							</div>
-
-							<ul class="site-menu js-clone-nav d-none d-lg-block">
-								<li class="active">
-									<a href="index.html">Home</a>
-								</li>
-								<li class="has-children">
-									<a href="properties.html">Properties</a>
-									<ul class="dropdown">
-										<li><a href="#">Buy</a></li>
-										<li><a href="#">Rent</a></li>
-										<li><a href="#">Lease</a></li>
-										<li class="has-children">
-											<a href="#">Menu</a>
-											<ul class="dropdown">
-												<li><a href="#">Menu One</a></li>
-												<li><a href="#">Menu Two</a></li>
-												<li><a href="#">Menu Three</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</nav>
-					</div>
+					<? $APPLICATION->IncludeComponent(
+						"bitrix:menu",
+						"horizontal_multilevel_header",
+						array(
+							"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+							"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+							"DELAY" => "N",	// Откладывать выполнение шаблона меню
+							"MAX_LEVEL" => "3",	// Уровень вложенности меню
+							"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+							"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+							"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+							"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+							"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+							"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+							"COMPONENT_TEMPLATE" => "horizontal_multilevel"
+						),
+						false
+					); ?>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"horizontal_multilevel", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "3",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "N",
-		"COMPONENT_TEMPLATE" => "horizontal_multilevel"
-	),
-	false
-);?>
-<?
-$GLOBALS['priorityFilter'] = Array(
-'!PROPERTY_PRIORITY_DEAL' => false
-);
-?>
- <?$APPLICATION->IncludeComponent(
+	<?
+	$GLOBALS['priorityFilter'] = array(
+		'!PROPERTY_PRIORITY_DEAL' => false
+	);
+	?>
+	<? $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
-	".default", 
+	"slider", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -182,8 +149,9 @@ $GLOBALS['priorityFilter'] = Array(
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "CODE",
+			1 => "NAME",
+			2 => "",
 		),
 		"FILTER_NAME" => "priorityFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
@@ -204,8 +172,15 @@ $GLOBALS['priorityFilter'] = Array(
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "LOCATION",
+			1 => "NUMBER_OF_BATHROOMS",
+			2 => "NUMBER_OF_FLOORS",
+			3 => "GARAGE",
+			4 => "SQUARE",
+			5 => "PRIORITY_DEAL",
+			6 => "EXTERNAL_REFERENCE",
+			7 => "COST",
+			8 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
@@ -219,41 +194,10 @@ $GLOBALS['priorityFilter'] = Array(
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => ".default"
+		"COMPONENT_TEMPLATE" => "slider"
 	),
 	false
-);?><br>
-
-	<div class="slide-one-item home-slider owl-carousel">
-
-		<div class="site-blocks-cover" style="background-image: url(<?= SITE_TEMPLATE_PATH ?>/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-
-			<div class="text">
-				<h2>853 S Lucerne Blvd</h2>
-				<p class="location"><span class="property-icon icon-room"></span> Los Angeles, CA 90005</p>
-				<p class="mb-2"><strong>$2,250,500</strong></p>
-
-
-				<p class="mb-0"><a href="#" class="text-uppercase small letter-spacing-1 font-weight-bold">More Details</a></p>
-
-			</div>
-		</div>
-
-		<div class="site-blocks-cover" style="background-image: url(<?= SITE_TEMPLATE_PATH ?>/images/hero_bg_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-
-			<div class="text">
-				<h2>625 S. Berendo St</h2>
-				<p class="location"><span class="property-icon icon-room"></span>607 Los Angeles, CA 90005</p>
-				<p class="mb-2"><strong>$2,250,500</strong></p>
-
-
-				<p class="mb-0"><a href="#" class="text-uppercase small letter-spacing-1 font-weight-bold">More Details</a></p>
-
-			</div>
-
-		</div>
-
-	</div>
+); ?>
 
 	<div class="py-5">
 		<div class="container">
@@ -301,4 +245,3 @@ $GLOBALS['priorityFilter'] = Array(
 			</div>
 		</div>
 	</div>
-	
