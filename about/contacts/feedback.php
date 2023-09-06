@@ -2,6 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Обратная связь");
 $APPLICATION->SetTitle("Обратная связь");
+$APPLICATION->AddChainItem($APPLICATION->GetTitle(),$_SERVER['REQUEST_URI']);
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:main.feedback", 
 	".default", 

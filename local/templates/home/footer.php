@@ -5,14 +5,17 @@
       <div class="col-lg-4">
         <div class="mb-5">
           <? $APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            "",
-            array(
-              "AREA_FILE_SHOW" => "page",
-              "AREA_FILE_SUFFIX" => "about",
-              "EDIT_TEMPLATE" => ""
-            )
-          ); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "about",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
         </div>
 
 
@@ -42,14 +45,17 @@
 
       <div class="col-lg-4 mb-5 mb-lg-0">
         <? $APPLICATION->IncludeComponent(
-          "bitrix:main.include",
-          "",
-          array(
-            "AREA_FILE_SHOW" => "page",
-            "AREA_FILE_SUFFIX" => "socials_footer",
-            "EDIT_TEMPLATE" => ""
-          )
-        ); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "socials_footer",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
 
 
 
@@ -60,14 +66,17 @@
       <div class="col-md-12">
         <p>
           <? $APPLICATION->IncludeComponent(
-            "bitrix:main.include",
-            "",
-            array(
-              "AREA_FILE_SHOW" => "page",
-              "AREA_FILE_SUFFIX" => "license",
-              "EDIT_TEMPLATE" => ""
-            )
-          ); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "license",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
         </p>
       </div>
     </div>

@@ -46,35 +46,44 @@
 					<div class="col-6 col-md-6">
 						<p class="mb-0">
 							<? $APPLICATION->IncludeComponent(
-								"bitrix:main.include",
-								"",
-								array(
-									"AREA_FILE_SHOW" => "page",
-									"AREA_FILE_SUFFIX" => "phone",
-									"EDIT_TEMPLATE" => ""
-								)
-							); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "phone",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
 							<? $APPLICATION->IncludeComponent(
-								"bitrix:main.include",
-								"",
-								array(
-									"AREA_FILE_SHOW" => "page",
-									"AREA_FILE_SUFFIX" => "email",
-									"EDIT_TEMPLATE" => ""
-								)
-							); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "email",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
 						</p>
 					</div>
 					<div class="col-6 col-md-6 text-right">
 						<? $APPLICATION->IncludeComponent(
-							"bitrix:main.include",
-							"",
-							array(
-								"AREA_FILE_SHOW" => "page",
-								"AREA_FILE_SUFFIX" => "socials",
-								"EDIT_TEMPLATE" => ""
-							)
-						); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "socials",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
 					</div>
 				</div>
 			</div>
@@ -87,14 +96,17 @@
 					<div class="col-8 col-md-8 col-lg-4">
 						<h1 class=""><a href="/" class="h5 text-uppercase text-black"><strong>
 									<? $APPLICATION->IncludeComponent(
-										"bitrix:main.include",
-										"",
-										array(
-											"AREA_FILE_SHOW" => "page",
-											"AREA_FILE_SUFFIX" => "title",
-											"EDIT_TEMPLATE" => ""
-										)
-									); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "title",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AREA_FILE_RECURSIVE" => "Y"
+	),
+	false
+); ?>
 								</strong></a></h1>
 					</div>
 
@@ -120,12 +132,12 @@
 			</div>
 		</div>
 	</div>
+	<?if($_SERVER['REQUEST_URI']=='/'):?>
 	<?
 	$GLOBALS['priorityFilter'] = array(
 		'!PROPERTY_PRIORITY_DEAL' => false
 	);
-	?>
-	<? $APPLICATION->IncludeComponent(
+	$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"slider", 
 	array(
@@ -157,7 +169,7 @@
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "5",
 		"IBLOCK_TYPE" => "ad",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"MESSAGE_404" => "",
 		"NEWS_COUNT" => "20",
@@ -206,42 +218,58 @@
 				<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
 					<div class="feature d-flex align-items-start">
 						<? $APPLICATION->IncludeComponent(
-							"bitrix:main.include",
-							"",
-							array(
-								"AREA_FILE_SHOW" => "page",
-								"AREA_FILE_SUFFIX" => "info_1",
-								"EDIT_TEMPLATE" => ""
-							)
-						); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SUFFIX" => "info_1",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
 					<div class="feature d-flex align-items-start">
 						<? $APPLICATION->IncludeComponent(
-							"bitrix:main.include",
-							"",
-							array(
-								"AREA_FILE_SHOW" => "page",
-								"AREA_FILE_SUFFIX" => "info_2",
-								"EDIT_TEMPLATE" => ""
-							)
-						); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SUFFIX" => "info_2",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 mb-3 mb-lg-0">
 					<div class="feature d-flex align-items-start">
 						<? $APPLICATION->IncludeComponent(
-							"bitrix:main.include",
-							"",
-							array(
-								"AREA_FILE_SHOW" => "page",
-								"AREA_FILE_SUFFIX" => "info_3",
-								"EDIT_TEMPLATE" => ""
-							)
-						); ?>
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SUFFIX" => "info_3",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default"
+	),
+	false
+); ?>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<?else:?>
+
+	<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "nav_chain", Array(
+	"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+		"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+		"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+	),
+	false
+);?><br><?endif?>
