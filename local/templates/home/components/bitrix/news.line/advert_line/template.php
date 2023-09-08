@@ -23,7 +23,7 @@
 							<div class="inner">
 								<span class="price rounded">$<?=$arItem["PROPERTY_COST_VALUE"]?></span>
 								<h3 class="title"><?=$arItem["NAME"]?></h3>
-								<p class="location"><?=$arItem["PROPERTY_LOCATION_VALUE"]?></p>
+								<p class="location"><?=$arItem["PREVIEW_TEXT"]?></p>
 							</div>
 							<div class="prop-more-info">
 								<div class="inner d-flex">

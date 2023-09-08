@@ -10,7 +10,7 @@
 
 			<div class="text">
 				<h2><?=$arItem["NAME"]?></h2>
-				<p class="location"><span class="property-icon icon-room"></span> <?=$arItem["DISPLAY_PROPERTIES"]["LOCATION"]["DISPLAY_VALUE"]?></p>
+				<p class="location"><span class="property-icon icon-room"></span> <?=$arItem["PREVIEW_TEXT"]?></p>
 				<p class="mb-2"><strong>$<?=$arItem["DISPLAY_PROPERTIES"]["COST"]["DISPLAY_VALUE"]?></strong></p>
 
 

@@ -15,13 +15,14 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y");
 		"DETAIL_URL" => "",
 		"FIELD_CODE" => array(
 			0 => "NAME",
-			1 => "PREVIEW_PICTURE",
-			2 => "PROPERTY_LOCATION",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
 			3 => "PROPERTY_COST",
 			4 => "PROPERTY_SQUARE",
 			5 => "PROPERTY_NUMBER_OF_BEDROOMS",
 			6 => "PROPERTY_NUMBER_OF_BATHROOMS",
 			7 => "PROPERTY_GARAGE",
+			8 => "",
 		),
 		"IBLOCKS" => array(
 			0 => "5",

@@ -163,7 +163,8 @@
 		"FIELD_CODE" => array(
 			0 => "CODE",
 			1 => "NAME",
-			2 => "",
+			2 => "PREVIEW_TEXT",
+			3 => "",
 		),
 		"FILTER_NAME" => "priorityFilter",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
