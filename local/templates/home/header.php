@@ -132,7 +132,7 @@
 			</div>
 		</div>
 	</div>
-	<?if($_SERVER['REQUEST_URI']=='/'):?>
+	<?if($APPLICATION->GetCurPage()=='/'):?>
 	<?
 	$GLOBALS['priorityFilter'] = array(
 		'!PROPERTY_PRIORITY_DEAL' => false
