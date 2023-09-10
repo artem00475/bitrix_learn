@@ -21,7 +21,11 @@ $this->setFrameMode(true);
 			<div class="row mb-5">
 				<div class="col-12">
 					<div class="site-section-title">
-						<h2><?=GetMessage("ADVERT_TITLE")?></h2>
+						<? if ($APPLICATION->GetCurDir()=='advertisment'):?>
+							<h2><?=GetMessage("ADVERT_TITLE")?></h2>
+						<? else:?>
+							<h2><?=GetMessage("MY_ADVERT_TITLE")?></h2>
+						<?endif?>
 					</div>
 				</div>
 			</div>

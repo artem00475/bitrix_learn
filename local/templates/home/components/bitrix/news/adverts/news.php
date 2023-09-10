@@ -56,6 +56,11 @@ $APPLICATION->IncludeComponent(
 	['HIDE_ICONS' => 'Y']
 );
 ?>
+<?
+	$GLOBALS['myAdFilter'] = array(
+		'=CREATED_BY' => $GLOBALS['USER']->GetID()
+	);
+?>
 <?php
 endif;
 $APPLICATION->IncludeComponent(
