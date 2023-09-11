@@ -43,6 +43,8 @@ $this->setFrameMode(true);
 									<div><img src="<?=$item["SRC"]?>" alt="Image" class="img-fluid"></div>
 								<?endforeach?>
 							<?endif?>
+						<?else:?>
+							<div><img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="Image" class="img-fluid"></div>
 						<?endif?>
 					</div>
 				</div>
