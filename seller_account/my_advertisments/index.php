@@ -8,7 +8,7 @@ $APPLICATION->SetTitle("Мои объявления");
 	array(
 		"COMPONENT_TEMPLATE" => "adverts",
 		"IBLOCK_TYPE" => "ad",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "6",
 		"NEWS_COUNT" => "6",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",

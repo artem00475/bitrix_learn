@@ -25,7 +25,7 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y");
 			8 => "",
 		),
 		"IBLOCKS" => array(
-			0 => "5",
+			0 => "6",
 		),
 		"IBLOCK_TYPE" => "ad",
 		"NEWS_COUNT" => "9",
@@ -53,9 +53,9 @@ $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN","Y");
 			4 => "",
 		),
 		"IBLOCKS" => array(
-			0 => "6",
+			0 => "7",
 		),
-		"IBLOCK_TYPE" => "service",
+		"IBLOCK_TYPE" => "services",
 		"NEWS_COUNT" => "6",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",

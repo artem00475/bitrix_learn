@@ -69,7 +69,7 @@ $APPLICATION->SetTitle("Объявления");
 			10 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "6",
 		"IBLOCK_TYPE" => "ad",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",

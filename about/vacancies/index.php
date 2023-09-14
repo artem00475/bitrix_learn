@@ -60,9 +60,9 @@ $APPLICATION->SetTitle("Вакансии");
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "DISLIKE",
-			1 => "LIKE",
-			2 => "PHOTOGALLERY",
+			0 => "PHOTOGALLERY",
+			1 => "DISLIKE",
+			2 => "LIKE",
 			3 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
