@@ -125,16 +125,20 @@ $this->setFrameMode(true);
 					<?if ($arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"] || $arResult["DISPLAY_PROPERTIES"]["EXTERNAL_REFERENCE"]):?>
 						<div>
 							<h2 class="h4 text-black mb-3"><?=GetMessage('ADVERTS_DETAILS_EXTRA')?></h2>
-							<? if (count($arResult["PROPERTIES"]["EXTRA_MATERIALS"]["VALUE"])==1):?>
-							<a href="<?=$arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]["FILE_VALUE"]["SRC"]?>"><?=$arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]["FILE_VALUE"]["SRC"]?></a><br>
-							<? else:?>
-								<?foreach ($arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]["FILE_VALUE"] as $item):?>
-									<a href="<?=$item["SRC"]?>"><?=$item["SRC"]?></a><br>
+							<?if ($arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]):?>
+								<? if (count($arResult["PROPERTIES"]["EXTRA_MATERIALS"]["VALUE"])==1):?>
+									<a href="<?=$arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]["FILE_VALUE"]["SRC"]?>"><?=$arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]["FILE_VALUE"]["SRC"]?></a><br>
+								<? else:?>
+									<?foreach ($arResult["DISPLAY_PROPERTIES"]["EXTRA_MATERIALS"]["FILE_VALUE"] as $item):?>
+										<a href="<?=$item["SRC"]?>"><?=$item["SRC"]?></a><br>
+									<?endforeach?>
+								<?endif?>
+							<?endif?>
+							<?if ($arResult["DISPLAY_PROPERTIES"]["EXTERNAL_REFERENCE"]):?>
+								<?foreach ($arResult["DISPLAY_PROPERTIES"]["EXTERNAL_REFERENCE"]["VALUE"] as $item):?>
+									<a href="<?=$item?>"><?=$item?></a><br>
 								<?endforeach?>
 							<?endif?>
-							<?foreach ($arResult["DISPLAY_PROPERTIES"]["EXTERNAL_REFERENCE"]["VALUE"] as $item):?>
-								<a href="<?=$item?>"><?=$item?></a><br>
-							<?endforeach?>
 						</div>
 					<?endif?>
 				</div>
