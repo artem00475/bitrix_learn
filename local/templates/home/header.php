@@ -46,44 +46,50 @@
 					<div class="col-6 col-md-6">
 						<p class="mb-0">
 							<? $APPLICATION->IncludeComponent(
-	"bitrix:main.include", 
-	".default", 
-	array(
-		"AREA_FILE_SHOW" => "sect",
-		"AREA_FILE_SUFFIX" => "phone",
-		"EDIT_TEMPLATE" => "",
-		"COMPONENT_TEMPLATE" => ".default",
-		"AREA_FILE_RECURSIVE" => "Y"
-	),
-	false
-); ?>
+								"bitrix:main.include", 
+								".default", 
+								array(
+									"AREA_FILE_SHOW" => "sect",
+									"AREA_FILE_SUFFIX" => "phone",
+									"EDIT_TEMPLATE" => "",
+									"COMPONENT_TEMPLATE" => ".default",
+									"AREA_FILE_RECURSIVE" => "Y"
+								),
+								false
+							); ?>
 							<? $APPLICATION->IncludeComponent(
-	"bitrix:main.include", 
-	".default", 
-	array(
-		"AREA_FILE_SHOW" => "sect",
-		"AREA_FILE_SUFFIX" => "email",
-		"EDIT_TEMPLATE" => "",
-		"COMPONENT_TEMPLATE" => ".default",
-		"AREA_FILE_RECURSIVE" => "Y"
-	),
-	false
-); ?>
+								"bitrix:main.include", 
+								".default", 
+								array(
+									"AREA_FILE_SHOW" => "sect",
+									"AREA_FILE_SUFFIX" => "email",
+									"EDIT_TEMPLATE" => "",
+									"COMPONENT_TEMPLATE" => ".default",
+									"AREA_FILE_RECURSIVE" => "Y"
+								),
+								false
+							); ?>
 						</p>
 					</div>
 					<div class="col-6 col-md-6 text-right">
+					<?if (!$USER->IsAuthorized()):?>
+					<a href="<?=$SITE_DIR?>/login"><?=GetMessage("LOGIN")?></a>
+					<? else:?>
+						<a href="/?logout=yes&<?=bitrix_sessid_get()?>"><?=GetMessage("EXIT")?></a>
+					<?endif?>
+
 						<? $APPLICATION->IncludeComponent(
-	"bitrix:main.include", 
-	".default", 
-	array(
-		"AREA_FILE_SHOW" => "sect",
-		"AREA_FILE_SUFFIX" => "socials",
-		"EDIT_TEMPLATE" => "",
-		"COMPONENT_TEMPLATE" => ".default",
-		"AREA_FILE_RECURSIVE" => "Y"
-	),
-	false
-); ?>
+							"bitrix:main.include", 
+							".default", 
+							array(
+								"AREA_FILE_SHOW" => "sect",
+								"AREA_FILE_SUFFIX" => "socials",
+								"EDIT_TEMPLATE" => "",
+								"COMPONENT_TEMPLATE" => ".default",
+								"AREA_FILE_RECURSIVE" => "Y"
+							),
+							false
+						); ?>
 					</div>
 				</div>
 			</div>
