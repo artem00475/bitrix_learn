@@ -38,7 +38,7 @@ $this->setFrameMode(true);
 	?>
         <div class="agent__card" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
             <div class="small-info">
-                <div class="avatar" style="background-image: url(<?=$arItem['UF_PHOTO']?>);"></div>
+                <div class="avatar" style="background-image: url(<?if($arItem['UF_PHOTO']):?><?=$arItem['UF_PHOTO']?><?else:?><?=$this->GetFolder()?>/images/no-avatar.png<?endif?>);"></div>
                 <div class="info">
                     <div class="name"><?=$arItem['UF_NAME']?></div>
                 </div>

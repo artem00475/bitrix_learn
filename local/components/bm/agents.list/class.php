@@ -19,9 +19,6 @@ use \Bitrix\Main\Localization\Loc;
 use \Bitrix\Highloadblock\HighloadBlockTable;
 use \Bitrix\Main\Engine\ActionFilter;
 
-use Bitrix\Highloadblock as HL;
-use Bitrix\Main\Entity;
-
 class AgentsList extends CBitrixComponent implements Controllerable, Errorable
 {
     protected ErrorCollection $errorCollection;
@@ -177,7 +174,9 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
          * Получить Избранных агентов для текущего пользователя записать их в массив $this->arResult['STAR_AGENTS']
          * Это можно зделать с помощью CUserOptions::GetOption
          */ 
-         $this->arResult['STAR_AGENTS'] = CUserOptions::GetOption('mcart_agent', 'agents_star');
+        $star_agents = CUserOptions::GetOption('mcart_agent', 'agents_star');
+        if (!is_array($star_agents)) $star_agents = array();
+         $this->arResult['STAR_AGENTS'] = $star_agents;
         /*
          * Данного метода нет в документации, код метода и его параметры можно найти в ядре (/bitrix/modules/main/) или в гугле
          * $category - это категория настройки, можете придумать любую, например mcart_agent
@@ -235,7 +234,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
          * Написать запрос для получения класса хлблока (нужно использовать getDataClass())
          * https://tichiy.ru/wiki/rabota-s-highload-blokami-bitriks-cherez-api-d7/
          */
-        $entity = HL\HighloadBlockTable::compileEntity($arHlblock); 
+        $entity = HighloadBlockTable::compileEntity($arHlblock); 
         $entity_data_class = $entity->getDataClass(); 
 
         return $entity_data_class;
@@ -304,6 +303,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             'count_total' => true,
             'offset' => $nav->getOffset(),
             'limit' => $nav->getLimit(),
+            'select' => ['*'],
         ]);
     
         while ($arAgent = $rsAgents->fetch()) {
@@ -318,8 +318,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
              */
 
              $arAgent['UF_JOB'] = $arTypeAgents[$arAgent['UF_JOB']];
-             $rsFile = CFile::GetByID($arAgent['UF_PHOTO']);
-             $arAgent['UF_PHOTO'] = $rsFile->Fetch()['SRC'];
+             $arAgent['UF_PHOTO'] = CFile::GetFileArray($arAgent['UF_PHOTO'])['SRC'];
              
 
 

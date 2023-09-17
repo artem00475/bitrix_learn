@@ -10,7 +10,7 @@ $APPLICATION->AddChainItem($APPLICATION->GetTitle(),$_SERVER['REQUEST_URI']);
 	array(
 		"COMPONENT_TEMPLATE" => ".default",
 		"HLBLOCK_TNAME" => "agents",
-		"ITEMS_COUNT" => "3",
+		"ITEMS_COUNT" => "2",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "36000000"
 	),
