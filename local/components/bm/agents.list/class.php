@@ -318,8 +318,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
              */
 
              $arAgent['UF_JOB'] = $arTypeAgents[$arAgent['UF_JOB']];
-             $arAgent['UF_PHOTO'] = CFile::GetFileArray($arAgent['UF_PHOTO'])['SRC'];
-             
+             if ($arAgent['UF_PHOTO']) $arAgent['UF_PHOTO'] = CFile::GetFileArray($arAgent['UF_PHOTO'])['SRC'];
 
 
             $arAgents['ITEMS'][$arAgent['ID']] = $arAgent; // Записываем получившийся массив в $arAgents['ITEMS']
