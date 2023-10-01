@@ -12,7 +12,7 @@ $APPLICATION->SetTitle("Поиск");
 		"USE_TITLE_RANK" => "N",
 		"DEFAULT_SORT" => "rank",
 		"arrFILTER" => array(
-			0 => "iblock_reviews",
+			0 => "no",
 		),
 		"SHOW_WHERE" => "N",
 		"SHOW_WHEN" => "N",
@@ -44,7 +44,7 @@ $APPLICATION->SetTitle("Поиск");
 		"arrFILTER_iblock_reviews" => array(
 			0 => "13",
 		),
-		"USE_LANGUAGE_GUESS" => "Y",
+		"USE_LANGUAGE_GUESS" => "N",
 		"SHOW_RATING" => "",
 		"RATING_TYPE" => "",
 		"PATH_TO_USER_PROFILE" => ""

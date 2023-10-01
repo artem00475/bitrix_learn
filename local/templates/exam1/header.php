@@ -13,9 +13,9 @@
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/owl.carousel.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/scripts.js");
+	Asset::getInstance()->addString('<link rel="icon" type="image/vnd.microsoft.icon" href="'.SITE_TEMPLATE_PATH.'/img/favicon.ico">');
+	Asset::getInstance()->addString('<link rel="shortcut icon" href="'.SITE_TEMPLATE_PATH.'/img/favicon.ico">');
     ?>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
-    <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
 </head>
 
 <body>
@@ -58,21 +58,25 @@
         </header>
         <!-- /header -->
         <!-- nav -->
-        <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
-            "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-                "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-                "DELAY" => "N",	// Откладывать выполнение шаблона меню
-                "MAX_LEVEL" => "3",	// Уровень вложенности меню
-                "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
-                "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-                "MENU_CACHE_TYPE" => "N",	// Тип кеширования
-                "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-                "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-                "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
-                "COMPONENT_TEMPLATE" => "horizontal_multilevel"
-            ),
-            false
-        );?>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"top_menu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "top_menu"
+	),
+	false
+);?>
         
         <!-- /nav -->
         <!-- breadcrumbs -->
