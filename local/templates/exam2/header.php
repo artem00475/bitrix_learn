@@ -11,9 +11,9 @@
     <? use Bitrix\Main\Page\Asset;
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jquery.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/owl.carousel.min.js");
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/scripts.js");?>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
-    <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/scripts.js");
+	Asset::getInstance()->addString('<link rel="icon" type="image/vnd.microsoft.icon" href="'.SITE_TEMPLATE_PATH.'/img/favicon.ico">');
+	Asset::getInstance()->addString('<link rel="shortcut icon" href="'.SITE_TEMPLATE_PATH.'/img/favicon.ico">');?>
 </head>
 
 <body>
@@ -66,22 +66,24 @@
         </header>
         <!-- /header -->
         <?$APPLICATION->IncludeComponent(
-            "bitrix:menu",
-            "top",
-            Array(
-                "ALLOW_MULTI_SELECT" => "N",
-                "CHILD_MENU_TYPE" => "left",
-                "COMPONENT_TEMPLATE" => "horizontal_multilevel",
-                "DELAY" => "N",
-                "MAX_LEVEL" => "3",
-                "MENU_CACHE_GET_VARS" => "",
-                "MENU_CACHE_TIME" => "3600",
-                "MENU_CACHE_TYPE" => "N",
-                "MENU_CACHE_USE_GROUPS" => "Y",
-                "ROOT_MENU_TYPE" => "top",
-                "USE_EXT" => "N"
-            )
-        );?>
+	"bitrix:menu", 
+	"top", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"COMPONENT_TEMPLATE" => "top",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "3",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "Y"
+	),
+	false
+);?>
         <? if ($APPLICATION->GetCurPage() != "/s3/"):?>
         <!-- breadcrumbs -->
         <?$APPLICATION->IncludeComponent(

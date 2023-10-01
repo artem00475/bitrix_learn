@@ -45,8 +45,11 @@ $APPLICATION->SetTitle("Отзывы");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DATE_ACTIVE_FROM",
+			4 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "POSITION",
@@ -61,8 +64,11 @@ $APPLICATION->SetTitle("Отзывы");
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "NAME",
+			1 => "DETAIL_TEXT",
+			2 => "DETAIL_PICTURE",
+			3 => "DATE_ACTIVE_FROM",
+			4 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "POSITION",
